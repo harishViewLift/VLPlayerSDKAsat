@@ -10,6 +10,17 @@ vlPlayer?.setSource(
         )
 ```
 
+```java
+val vlPlayer = VLPlayer(context = context)
+                .apply {
+                    setVLEndPoint(BootstrapApiConfig.apiBaseUrl) // Api endpoint from bootstrap
+                    setVLBeaconEndPoint(BootstrapApiConfig.playerBeaconUrl)// beacon endpoint from bootstrap
+                    init()
+            }
+
+
+```
+
 ** Case 1
 
 If we provide `asatVideo = true`, and `Custom Video Response` with Custom URL, then Video SDK will make entitlement api call. If we get monetisation error, then it will throw back error. 
